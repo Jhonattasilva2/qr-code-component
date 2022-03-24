@@ -8,6 +8,7 @@ function QrDiv() {
       <Subtitle>
         Improve your front-end <br /> skills by building projects
       </Subtitle>
+      <Paragraph>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</Paragraph>
     </Div>
   );
 }
@@ -34,5 +35,13 @@ const Subtitle = styled.h3`
   text-align: center;
   font-size: 20px;
 `;
+
+const Paragraph = styled.p`
+font-size: 15px;
+text-align: center;
+color: hsl(220, 15%, 55%);
+max-width: 87%;
+margin: 0 auto;
+`
 
 export default QrDiv;
