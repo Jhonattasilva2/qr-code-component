@@ -1,20 +1,33 @@
 import styled from "styled-components";
-import qrCodeImg from "./Img/image-qr-code.png";
 
 function QrDiv() {
+  const urls = [
+    "https://www.linkedin.com/in/jhonatta-silva-dev/",
+    "https://github.com/Jhonattasilva2",
+    "https://www.instagram.com/jhonatta.dev/",
+    "https://www.facebook.com/jhonatta.ferreira.9/",
+  ];
+
+  const randomUrl = () => {
+    return urls[Math.floor(Math.random() * urls.length)];
+  };
+
+  let url = `https://qrtag.net/api/qr_transparent_6.svg?url=${randomUrl()}`;
+
   return (
     <Div>
-      <Imagem src={qrCodeImg} />
+      <Imagem src={url} alt="qrtag" />
       <Subtitle>
-        Improve your front-end <br /> skills by building projects
+        Scan the code above <br /> to get a social media link
       </Subtitle>
-      <Paragraph>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</Paragraph>
+      <Paragraph>
+        Scan the QR code to visit a social media profile of an excellent Frontend Developer
+      </Paragraph>
     </Div>
   );
 }
 
 const Div = styled.div`
-  /* width: 20%; */
   width: 300px;
   height: 480px;
   background-color: #fff;
@@ -28,6 +41,7 @@ const Imagem = styled.img`
   width: 90%;
   margin: 5% auto;
   border-radius: 10px;
+  background-color: hsl(212, 45%, 89%);
 `;
 
 const Subtitle = styled.h3`
@@ -37,11 +51,11 @@ const Subtitle = styled.h3`
 `;
 
 const Paragraph = styled.p`
-font-size: 15px;
-text-align: center;
-color: hsl(220, 15%, 55%);
-max-width: 87%;
-margin: 0 auto;
-`
+  font-size: 15px;
+  text-align: center;
+  color: hsl(220, 15%, 55%);
+  max-width: 87%;
+  margin: 0 auto;
+`;
 
 export default QrDiv;
